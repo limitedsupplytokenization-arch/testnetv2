@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LSTcoins Testnet v2 - Social Tasks</title>
+    <link rel="icon" type="image/jpeg" href="favicon.jpeg">
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <main class="main-content">
+        <h1 class="main-title">Test LST v2 — <span class="highlight">Social</span> and <span class="highlight">KYC</span></h1>
+
+        <div class="card-container">
+            <button class="nav-arrow nav-arrow-left" id="prevBtn">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+
+            <button class="nav-arrow nav-arrow-right" id="nextBtn">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+
+            <div class="cards-wrapper">
+                <!-- Login with X -->
+                <div class="card login-card active" data-card="login">
+                    <h2 class="card-title">Start</h2>
+                    <div class="success-badge"><i class="fas fa-check"></i> Successful</div>
+                    <div class="card-content">
+                        <div class="centered">
+                            <div class="card-description">Welcome to the LSTcoins Testnet v2. Explore social tasks, complete simple actions, and verify your wallet and TX hash to finish. Click Start to begin the flow.</div>
+                            <button class="btn primary" id="startBtn">Start</button>
+                        </div>
+                    </div>
+                    <div class="success-overlay">
+                        <div class="success-circle">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="success-text">Login Successful!</div>
+                    </div>
+                </div>
+
+                <!-- Follow on X -->
+                <div class="card follow-card" data-card="follow">
+                    <h2 class="card-title">X Follow</h2>
+                    <div class="success-badge"><i class="fas fa-check"></i> Successful</div>
+                    <div class="card-content">
+                        <div class="centered">
+                            <div class="card-description">Follow the official LSTcoins account on X to support the project and stay connected with the community.</div>
+                            <a class="btn ghost" id="followLink" href="https://x.com/intent/follow?screen_name=LSTcoins" target="_blank">
+                                <i class="fa-brands fa-x-twitter"></i>
+                                Follow LSTcoins
+                            </a>
+                            <button class="btn primary" id="followDone">Done</button>
+                        </div>
+                    </div>
+                    <div class="success-overlay">
+                        <div class="success-circle">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="success-text">Follow Confirmed!</div>
+                    </div>
+                </div>
+
+                <!-- Enable notifications on X -->
+                <div class="card notify-card" data-card="notify">
+                    <h2 class="card-title">Notifications</h2>
+                    <div class="success-badge"><i class="fas fa-check"></i> Successful</div>
+                    <div class="card-content">
+                        <div class="centered">
+                            <div class="card-description">Enable notifications for the LSTcoins X profile so you never miss important updates, launches, or announcements.</div>
+                            <a class="btn ghost" id="notifyLink" href="https://x.com/LSTcoins" target="_blank">
+                                <i class="fa-brands fa-x-twitter"></i>
+                                Notis On
+                            </a>
+                            <button class="btn primary" id="notifyDone">Done</button>
+                        </div>
+                    </div>
+                    <div class="success-overlay">
+                        <div class="success-circle">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="success-text">Notifications Enabled!</div>
+                    </div>
+                </div>
+
+                <!-- Tweet about LSTcoins -->
+                <div class="card tweet-card" data-card="tweet">
+                    <h2 class="card-title">Tweet</h2>
+                    <div class="success-badge"><i class="fas fa-check"></i> Successful</div>
+                    <div class="card-content">
+                        <div class="centered">
+                            <div class="card-description">Share a short tweet about LSTcoins and the Testnet to help spread the word to your followers.</div>
+                            <a class="btn ghost" id="tweetLink" target="_blank"
+                               href="https://twitter.com/intent/tweet?text=Don%E2%80%99t%20miss%20your%20last%20shot%20to%20join%20%40LSTcoins%20Testnet%20v2!%0A%F0%9F%91%89%20testnet.lstcoins.org%0A%0ALet%20the%20gold%20we%20hold%20be%20%24LST%0A%0A%23Testnet%20%23Airdrop">
+                                <i class="fa-brands fa-x-twitter"></i>
+                                Compose Tweet
+                            </a>
+                            <button class="btn primary" id="tweetDone">Done</button>
+                        </div>
+                    </div>
+                    <div class="success-overlay">
+                        <div class="success-circle">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="success-text">Tweet Confirmed!</div>
+                    </div>
+                </div>
+
+                <!-- Join Telegram -->
+                <div class="card telegram-card" data-card="telegram">
+                    <h2 class="card-title">Telegram</h2>
+                    <div class="success-badge"><i class="fas fa-check"></i> Successful</div>
+                    <div class="card-content">
+                        <div class="centered">
+                            <div class="card-description">Join the official LSTcoins Telegram channel to receive the latest news and community updates in real time.</div>
+                            <a class="btn ghost" id="tgLink" href="https://t.me/lstcoins" target="_blank">
+                                <i class="fa-brands fa-telegram"></i>
+                                Join Channel
+                            </a>
+                            <button class="btn primary" id="tgDone">Done</button>
+                        </div>
+                    </div>
+                    <div class="success-overlay">
+                        <div class="success-circle">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="success-text">Join Confirmed!</div>
+                    </div>
+                </div>
+
+                <!-- KYC + Wallet + TX Hash -->
+                <div class="card kyc-card" data-card="kyc">
+                    <h2 class="card-title">KYC & Wallet</h2>
+                    <div class="success-badge"><i class="fas fa-check"></i> Successful</div>
+                    <div class="card-content">
+                        <div class="results-interface">
+                            <!-- Step 1: Intro and Next -->
+                            <div class="kyc-step-intro">
+                                <div class="card-description">Use the wallet address from your previous testnet activity to perform on-chain verification. After verification, xpLST tokens will be sent to the designated address depending on your eligibility. Please check your wallets. ⚠️ To verify your wallet address, send 0.0000025 ETH on Base network (about $0.009). After sending, submit the transaction hash from Basescan below.</div>
+                                <button class="btn primary" id="kycNext">Next</button>
+                            </div>
+
+                            <!-- Step 2: Loading -->
+                            <div class="kyc-loading" style="display:none;">
+                                <img src="logo.gif" alt="loading" class="kyc-loading-gif">
+                            </div>
+
+                            <!-- Step 3: Address + QR + Note + Hash input -->
+                            <div class="kyc-verify" style="display:none;">
+                                <div class="kyc-topline">
+                                    <div class="kyc-address-wrap">
+                                        <div class="kyc-wallet-address" id="kycWalletAddress">0x5cd89FAa648A2454F590<wbr>4103dBFa3bec8157a0c4</div>
+                                        <button class="btn ghost small" id="kycCopy">Copy</button>
+                                    </div>
+                                    <div class="kyc-qr-wrap">
+                                        <img src="qr.jpg" alt="QR code" class="kyc-qr-img" id="kycQrImg" />
+                                    </div>
+                                </div>
+                                <div class="wallet-input-group">
+                                    <div class="input-label">TX Hash</div>
+                                    <div class="input-container">
+                                        <input type="text" class="txhash-input" id="kycTxHash" placeholder="0x..." maxlength="78">
+                                    </div>
+                                    <button class="btn primary" id="kycDone">Done</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="success-overlay">
+                        <div class="success-circle">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="success-text">All Tasks Completed!</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
