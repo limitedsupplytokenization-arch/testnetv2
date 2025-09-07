@@ -72,10 +72,8 @@ let carousel;
 function showSuccess(cardSelector, storageKey) {
     const badge = document.querySelector(`${cardSelector} .success-badge`);
     if (badge) badge.classList.add('show');
-    // Persist KYC completion even in test mode
-    if (!TEST_MODE || storageKey === 'kycCompleted') {
-        localStorage.setItem(storageKey, 'true');
-    }
+    // Persist success for all tasks so badges survive refresh
+    localStorage.setItem(storageKey, 'true');
     if (storageKey && storageKey in sessionState) {
         sessionState[storageKey] = true;
     }
@@ -97,6 +95,23 @@ function restoreStates() {
 document.addEventListener('DOMContentLoaded', () => {
     carousel = new CardCarousel();
     restoreStates();
+
+    // Restore success badges (without unlocking navigation) for non-KYC cards
+    (function restoreBadges() {
+        const mapping = [
+            { sel: '.login-card', key: 'loginCompleted' },
+            { sel: '.follow-card', key: 'followCompleted' },
+            { sel: '.notify-card', key: 'notifyCompleted' },
+            { sel: '.tweet-card', key: 'tweetCompleted' },
+            { sel: '.telegram-card', key: 'telegramCompleted' },
+        ];
+        mapping.forEach(m => {
+            if (localStorage.getItem(m.key) === 'true') {
+                const badge = document.querySelector(`${m.sel} .success-badge`);
+                if (badge) badge.classList.add('show');
+            }
+        });
+    })();
 
     // Simüle X ile giriş
     const startBtn = document.getElementById('startBtn');
